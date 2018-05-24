@@ -15,8 +15,8 @@ class Template
 <html lang='en'>
 <head>
 	<meta charset='utf-8' />
-	<link rel='apple-touch-icon' sizes='76x76' href='assets/img/apple-icon.png'>
-	<link rel='icon' type='image/png' sizes='96x96' href='assets/img/favicon.png'>
+	<link rel='apple-touch-icon' sizes='76x76' href='/economic-analyzer/system/assets/img/apple-icon.png'>
+	<link rel='icon' type='image/png' sizes='96x96' href='/economic-analyzer/system/assets/img/favicon.png'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 
 	<title>EconomiC Analyzer</title>
@@ -25,18 +25,18 @@ class Template
     <meta name='viewport' content='width=device-width' />
 
     <!-- Bootstrap core CSS     -->
-    <link href='assets/css/bootstrap.min.css' rel='stylesheet' />
+    <link href='/economic-analyzer/system/assets/css/bootstrap.min.css' rel='stylesheet' />
 
     <!-- Animation library for notifications   -->
-    <link href='assets/css/animate.min.css' rel='stylesheet'/>
+    <link href='/economic-analyzer/system/assets/css/animate.min.css' rel='stylesheet'/>
 
     <!--  Paper Dashboard core CSS    -->
-    <link href='assets/css/paper-dashboard.css' rel='stylesheet'/>
+    <link href='/economic-analyzer/system/assets/css/paper-dashboard.css' rel='stylesheet'/>
 
     <!--  Fonts and icons     -->
     <link href='http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-<link href='assets/css/themify-icons.css' rel='stylesheet'>
+<link href='/economic-analyzer/system/assets/css/themify-icons.css' rel='stylesheet'>
 
 </head>
 <body>";
@@ -68,11 +68,11 @@ class Template
 </body>
 
     <!--   Core JS Files   -->
-    <script src=\"assets/js/jquery-1.10.2.js\" type=\"text/javascript\"></script>
-	<script src=\"assets/js/bootstrap.min.js\" type=\"text/javascript\"></script>
+    <script src=\"/economic-analyzer/system/assets/js/jquery-1.10.2.js\" type=\"text/javascript\"></script>
+	<script src=\"/economic-analyzer/system/assets/js/bootstrap.min.js\" type=\"text/javascript\"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src=\"assets/js/bootstrap-checkbox-radio.js\"></script>
+	<script src=\"/economic-analyzer/system/assets/js/bootstrap-checkbox-radio.js\"></script>
 
 </html>";
 
@@ -90,29 +90,60 @@ class Template
 
         <div class=\"sidebar-wrapper\">
             <div class=\"logo\">
-                <img src=\"assets/img/logo.png\" height=\"150\" width=\"200\">
+                <img src=\"/economic-analyzer/system/assets/img/logo.png\" height=\"150\" width=\"200\">
                 <h4>EconomiC Analyzer</h4>
             </div>
 
             <ul class=\"nav\">
                 <li class=\"active\">
-                    <a href=\"dashboard.php\">
+                    <a href=\"/economic-analyzer/system/dashboard.php\">
                         <i class=\"ti-panel\"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href=\"beneficiaries.php\">
+                    <a href=\"/economic-analyzer/tbbeneficiarieses\">
                         <i class=\"ti-user\"></i>
                         <p>Beneficiaries</p>
                     </a>
                 </li>
                 <li>
-                    <a href=\"programs.php\">
+                    <a href=\"/economic-analyzer/tbprograms\">
                         <i class=\"ti-view-list-alt\"></i>
                         <p>Programs</p>
                     </a>
                 </li>
+                 <li>
+                    <a href=\"/economic-analyzer/tbregions\">
+                        <i class=\"ti-map-alt\"></i>
+                        <p>Regiões</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href=\"/economic-analyzer/tbstats\">
+                        <i class=\"ti-ink-pen\"></i>
+                        <p>Estados</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href=\"/economic-analyzer/tbcities\">
+                        <i class=\"ti-location-pin\"></i>
+                        <p>Cidades</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href=\"/economic-analyzer/tbpaymentses\">
+                        <i class=\"ti-money\"></i>
+                        <p>Pagamentos</p>
+                    </a>
+                </li>
+                 <li class=\"nav-item dropdown\">
+                    <a href=\"/economic-analyzer/system/relatorios.php\">                        
+                        <p>Relatorios</p>
+                        <i class=\"ti-angle-down\"></i>
+                    </a>                     
+                </li>
+                 
             </ul>
         </div>
     </div>";
@@ -121,7 +152,7 @@ class Template
     function mainpanel()
     {
 
-        echo "<div class=\"main-panel\">
+        echo "<div class=\"main-panel\" style=\"overflow:hidden\">
         <nav class=\"navbar navbar-default\">
             <div class=\"container-fluid\">
                 <div class=\"navbar-header\">
