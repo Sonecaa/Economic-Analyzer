@@ -1,2 +1,4 @@
-# EconomiC-Analyzer (ECA)
-Platform for data extraction, econometric analysis and prediction
+# Economic-Analyzer
+TADS
+
+Precisa da biblioteca do Phreeze na mesma raiz que o projeto > https://github.com/jasonhinkle/phreeze
