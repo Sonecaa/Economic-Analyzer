@@ -28,17 +28,17 @@ $template->mainpanel();
 
 
         <div class="dropdown-menu">
-                        <a class="dropdown-item">
+                        <a href="../system/relatorios/Rel_BeneficiariosOrdemAlfabetica.php" class="dropdown-item">
                         <i class="ti-bar-chart"></i>
                          beneficiários e seus respectivos dados em ordem alfabética
                        </a>
                      <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">
+                        <a href="../system/relatorios/Rel_BeneficiariosEcidade.php" class="dropdown-item">
                         <i class="ti-bar-chart"></i>
                        beneficiários e a cidade a qual pertencem, com todos os dados do beneficiário e da cidade
                        </a>
             <div class="dropdown-divider"></div>
-                         <a class="dropdown-item">
+                         <a href="../system/relatorios/Rel_Pagamentos.php" class="dropdown-item">
                         <i class="ti-bar-chart"></i>
                         lista de os pagamentos
                        </a>
