@@ -43,7 +43,7 @@ $template->mainpanel();
                         lista de os pagamentos
                        </a>
             <div class="dropdown-divider"></div>
-                         <a class="dropdown-item">
+                         <a href="../system/relatorios/Rel_4.php" class="dropdown-item">
                         <i class="ti-bar-chart"></i>
                         número de beneficiários por cidade e o valor total pago por cidade, por mês
                        </a>

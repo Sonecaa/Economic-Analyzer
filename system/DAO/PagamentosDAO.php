@@ -24,12 +24,6 @@ class PagamentosDAO {
             echo "Erro: " . $erro->getMessage();
         }        
     }
-<<<<<<< HEAD
-    public function Totaldepagamentos() {
-        global $pdo;
-        try {
-            $statement = $pdo->prepare("SELECT sum(db_value) FROM db_eca.tb_payments  ");
-=======
     
      public function Totaldepagamentos() {
         global $pdo;
@@ -38,7 +32,6 @@ class PagamentosDAO {
 
             $statement = $pdo->prepare("SELECT sum(db_value) FROM db_eca.tb_payments  ");
 
->>>>>>> origin/master
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
                     $lista = array();
@@ -54,12 +47,6 @@ class PagamentosDAO {
             echo "Erro: " . $erro->getMessage();
         }
     }
-<<<<<<< HEAD
-    public function TotaldepagamentosUltimoMes() {
-        global $pdo;
-        try {
-            $statement = $pdo->prepare("SELECT sum(db_value) FROM db_eca.tb_payments ");
-=======
 
     public function TotaldepagamentosUltimoMes() {
         global $pdo;
@@ -68,7 +55,6 @@ class PagamentosDAO {
 
             $statement = $pdo->prepare("SELECT sum(db_value) FROM db_eca.tb_payments ");
 
->>>>>>> origin/master
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
                     $lista = array();
@@ -86,16 +72,34 @@ class PagamentosDAO {
     }
     public function MediaPagamentosDoUltimoMes() {
         global $pdo;
-<<<<<<< HEAD
-        try {
-            $statement = $pdo->prepare("SELECT AVG(db_value) FROM db_eca.tb_payments  ");
-=======
 
         try {
 
             $statement = $pdo->prepare("SELECT AVG(db_value) FROM db_eca.tb_payments  ");
 
->>>>>>> origin/master
+            if ($statement->execute()) {
+                if ($statement->rowCount() > 0) {
+                    $lista = array();
+                    while ($x = $statement->fetch(PDO::FETCH_OBJ)) {
+                        $lista[] = $x;
+                    }
+                    return $lista;
+                }
+            } else {
+                throw new PDOException("Erro: Não foi possível executar a declaração sql");
+            }
+        } catch (PDOException $erro) {
+            echo "Erro: " . $erro->getMessage();
+        }
+    }
+
+    public function Relatorio6(){
+        global $pdo;
+// #Relatório PDF com o valor total dos pagamentos por região em ordem alfabética;
+        try {
+
+            $statement = $pdo->prepare("SELECT p.db_valuea as valor, r.str_name_region as region FROM db_eca.tb_payments as p, db_eca.tb_region as r group by  r.str_name_region order by r.str_name_regions");
+
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
                     $lista = array();
