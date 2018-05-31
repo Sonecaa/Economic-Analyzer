@@ -6,14 +6,14 @@
 ?>
 
     <style>
-        .Iframado{
+        /*.Iframado{
             overflow:hidden; !important;
             height:100%;width:100%
-
+*/
         }
     </style>
 
-<iframe width="100%" height="100%" CLASS="Iframado"scrolling="no" frameborder="0" src="http://localhost/EconomiC-Analyzer/system/dashboard.php/"></iframe>
+<iframe width="100%" height="150%" CLASS="Iframado" frameborder="0" src="http://localhost/EconomiC-Analyzer/system/dashboard.php/"></iframe>
 
 
 <?php

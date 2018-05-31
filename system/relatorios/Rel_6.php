@@ -14,7 +14,7 @@ ob_start();
 
 $html = ob_get_clean();
 $dompdf = new DOMPDF();
-
+$tr = "";
 $html = "<html>"
     ."<head></head>"
     . "<body><h1></h1>"
@@ -39,6 +39,6 @@ ob_clean();
 // Render the HTML as PDF
 $dompdf->render();
 // Output the generated PDF to Browser
-$pdf = $dompdf->output();
-$dompdf->stream("Rel_6.pdf", $pdf );
+//$pdf = $dompdf->output();
+$dompdf->stream("Rel_6.pdf");
 ?>

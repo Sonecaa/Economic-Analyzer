@@ -14,7 +14,7 @@ ob_start();
 
 $html = ob_get_clean();
 $dompdf = new DOMPDF();
-
+$tr = "";
 $html = "<html>"
         ."<head></head>"
         . "<body><h1>Relatório PDF com a lista de os pagamentos, incluindo seus respectivos dados</h1>"

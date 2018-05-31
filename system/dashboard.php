@@ -9,7 +9,11 @@ $template->header();
 $template->sidebar();
 
 $template->mainpanel();
+require_once "DAO/BeneficiariosDAO.php";
+require_once "DAO/PagamentosDAO.php";
 
+$daobeneficiarios = new BeneficiariosDAO();
+$daopagamentos = new PagamentosDAO();
 ?>
 
         <div class="content">
@@ -21,20 +25,23 @@ $template->mainpanel();
                                 <div class="row">
                                     <div class="col-xs-5">
                                         <div class="icon-big icon-warning text-center">
-                                            <i class="ti-server"></i>
+                                            <i class="ti-money"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Capacity</p>
-                                            105GB
+                                            <p>Total de pagamento</p>
+                                            <?php foreach ($daopagamentos->Totaldepagamentos() as $item) {
+                                               echo $item->total . "<span style='color:green'>R$</span>";
+                                            }
+                                                ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-reload"></i> Updated now
+                                        <i class="ti-reload"></i> Atual
                                     </div>
                                 </div>
                             </div>
@@ -51,15 +58,18 @@ $template->mainpanel();
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Revenue</p>
-                                            $1,345
+                                            <p>Total de pagamento mensal</p>
+                                            <?php foreach ($daopagamentos->TotaldepagamentosUltimoMes() as $item) {
+                                                echo $item->total . "<span style='color:green'>R$</span>";
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-calendar"></i> Last day
+                                        <i class="ti-calendar"></i> Atual
                                     </div>
                                 </div>
                             </div>
@@ -70,21 +80,24 @@ $template->mainpanel();
                             <div class="content">
                                 <div class="row">
                                     <div class="col-xs-5">
-                                        <div class="icon-big icon-danger text-center">
+                                        <div class="icon-big icon-success text-center">
                                             <i class="ti-pulse"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Errors</p>
-                                            23
+                                            <p>Média dos pagamentos do último mês</p>
+                                            <?php foreach ($daopagamentos->MediaPagamentosDoUltimoMes() as $item) {
+                                                echo number_format($item->total) . "<span style='color:green'>R$</span>";
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-timer"></i> In the last hour
+                                        <i class="ti-timer"></i> Atual
                                     </div>
                                 </div>
                             </div>
@@ -96,20 +109,23 @@ $template->mainpanel();
                                 <div class="row">
                                     <div class="col-xs-5">
                                         <div class="icon-big icon-info text-center">
-                                            <i class="ti-twitter-alt"></i>
+                                            <i class="ti-user"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Followers</p>
-                                            +45
+                                            <p>Total de beneficiários</p>
+                                            <?php foreach ($daobeneficiarios->TotalDeBeneficiarios() as $item) {
+                                                echo number_format($item->total);
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-reload"></i> Updated now
+                                        <i class="ti-reload"></i> Atual
                                     </div>
                                 </div>
                             </div>
@@ -123,6 +139,7 @@ $template->mainpanel();
                             <div class="header">
                                 <h4 class="title">Users Behavior</h4>
                                 <p class="category">24 Hours performance</p>
+                                <?php include('graficos/_Graph1.php'); ?>
                             </div>
                             <div class="content">
                                 <div id="chartHours" class="ct-chart"></div>

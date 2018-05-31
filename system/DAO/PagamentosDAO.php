@@ -1,5 +1,5 @@
 <?php
-
+require_once("conexao.php");
 
 class PagamentosDAO {
     public function AllPagamentos(){
@@ -7,7 +7,7 @@ class PagamentosDAO {
 
         try {
 
-            $statement = $pdo->prepare("SELECT * FROM db_eca.tb_payments");
+            $statement = $pdo->prepare("SELECT * FROM db_eca.tb_payments;");
 
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
@@ -30,7 +30,7 @@ class PagamentosDAO {
 
         try {
 
-            $statement = $pdo->prepare("SELECT sum(db_value) FROM db_eca.tb_payments  ");
+            $statement = $pdo->prepare("SELECT sum(db_value) as total FROM db_eca.tb_payments  ");
 
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
@@ -53,7 +53,7 @@ class PagamentosDAO {
 
         try {
 
-            $statement = $pdo->prepare("SELECT sum(db_value) FROM db_eca.tb_payments ");
+            $statement = $pdo->prepare("SELECT sum(db_value) as total FROM db_eca.tb_payments as p where p.int_month = MONTH(CURDATE());");
 
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
@@ -75,7 +75,7 @@ class PagamentosDAO {
 
         try {
 
-            $statement = $pdo->prepare("SELECT AVG(db_value) FROM db_eca.tb_payments  ");
+            $statement = $pdo->prepare("SELECT AVG(db_value) as total FROM db_eca.tb_payments as p where p.int_month = MONTH(CURDATE());  ");
 
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {

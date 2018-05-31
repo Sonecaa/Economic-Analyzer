@@ -48,19 +48,14 @@ $template->mainpanel();
                         número de beneficiários por cidade e o valor total pago por cidade, por mês
                        </a>
             <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">
+                        <a href="../system/relatorios/Rel_5.php" class="dropdown-item">
                         <i class="ti-bar-chart"></i>
                         soma de vezes que o Beneficiários ganhou auxilio, os meses que foram e os valores de cada mês
                        </a>
             <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">
+                        <a href="../system/relatorios/Rel_6.php" class="dropdown-item">
                         <i class="ti-bar-chart"></i>
                         valor total dos pagamentos por região em ordem alfabética
-                       </a>
-            <div class="dropdown-divider"></div>
-                         <a class="dropdown-item">
-                        <i class="ti-bar-chart"></i>
-                        valor total dos pagamentos por estado em ordem alfabética
                        </a>
         </div>
     </ul>

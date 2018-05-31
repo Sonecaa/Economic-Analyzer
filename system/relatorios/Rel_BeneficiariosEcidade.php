@@ -14,7 +14,7 @@ ob_start();
 
 $html = ob_get_clean();
 $dompdf = new DOMPDF();
-
+$tr = "";
 $html = "<html>"
     ."<head></head>"
     . "<body><h1>Relatório PDF com a lista de todos os beneficiários e a cidade a qual pertencem, com todos os dados do beneficiário e da cidade, ordenados por cidade e posteriormente por nome do beneficiário</h1>"

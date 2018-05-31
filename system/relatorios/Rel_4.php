@@ -14,19 +14,21 @@ ob_start();
 
 $html = ob_get_clean();
 $dompdf = new DOMPDF();
-
+$tr = "";
 $html = "<html>"
     ."<head></head>"
     . "<body><h1></h1>"
     . "<table border='1'>"
     ."<thead><th>numBenefi</th>"
     ."<th>cidade</th>"
-    ."<th>total</th></thead>";
+    ."<th>total</th>"
+    ."<th>mes</th></thead>";
 foreach ($lista as $item) {
     $tr .=  "<tr>"
         ."<td>". $item->numBenefi ."</td>"
         ."<td>". $item->cidade ."</td>"
         ."<td>". $item->total ."</td>"
+        ."<td>". $item->mes ."</td>"
         ."</tr>";
 }
 $html .= $tr ."</table></body></html>";
