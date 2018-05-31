@@ -13,7 +13,7 @@
         }
     </style>
 
-<iframe width="100%" height="150%" CLASS="Iframado" frameborder="0" src="http://localhost/EconomiC-Analyzer/system/dashboard.php/"></iframe>
+<iframe width="100%" height="250%" CLASS="Iframado" frameborder="0" src="http://localhost/EconomiC-Analyzer/system/dashboard.php/"></iframe>
 
 
 <?php

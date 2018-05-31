@@ -140,6 +140,10 @@ $daopagamentos = new PagamentosDAO();
                                 <h4 class="title">Users Behavior</h4>
                                 <p class="category">24 Hours performance</p>
                                 <?php include('graficos/_Graph1.php'); ?>
+                                <br>
+                                <?php // include('graficos/_Graph2.php'); ?>
+                                <br>
+                                <?php //include('graficos/_Graph3.php'); ?>
                             </div>
                             <div class="content">
                                 <div id="chartHours" class="ct-chart"></div>
