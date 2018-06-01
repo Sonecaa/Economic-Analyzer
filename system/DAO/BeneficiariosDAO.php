@@ -8,7 +8,7 @@ class BeneficiariosDAO {
         global $pdo;
 
         try {
-
+            $pdo->rollBack();
             $statement = $pdo->prepare("SELECT * FROM db_eca.tb_beneficiaries order by str_name_person ASC");
 
             if ($statement->execute()) {

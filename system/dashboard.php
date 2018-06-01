@@ -9,11 +9,20 @@ $template->header();
 $template->sidebar();
 
 $template->mainpanel();
+
 require_once "DAO/BeneficiariosDAO.php";
 require_once "DAO/PagamentosDAO.php";
 
-$daobeneficiarios = new BeneficiariosDAO();
-$daopagamentos = new PagamentosDAO();
+try{
+    $daobeneficiarios = new BeneficiariosDAO();
+    $daopagamentos = new PagamentosDAO();
+
+}
+catch (Exception $e){
+ echo "<h1>$e</h1>";
+}
+
+
 ?>
 
         <div class="content">
@@ -31,10 +40,12 @@ $daopagamentos = new PagamentosDAO();
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>Total de pagamento</p>
-                                            <?php foreach ($daopagamentos->Totaldepagamentos() as $item) {
+                                            <?php
+                                          foreach ($daopagamentos->Totaldepagamentos() as $item) {
                                                echo $item->total . "<span style='color:green'>R$</span>";
                                             }
                                                 ?>
+
                                         </div>
                                     </div>
                                 </div>
@@ -139,6 +150,7 @@ $daopagamentos = new PagamentosDAO();
                             <div class="header">
                                 <h4 class="title">Users Behavior</h4>
                                 <p class="category">24 Hours performance</p>
+                                <?php // include('login.php'); ?>
                                 <?php include('graficos/_Graph1.php'); ?>
                                 <br>
                                 <?php // include('graficos/_Graph2.php'); ?>

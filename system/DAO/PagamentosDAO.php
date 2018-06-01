@@ -29,7 +29,6 @@ class PagamentosDAO {
         global $pdo;
 
         try {
-
             $statement = $pdo->prepare("SELECT sum(db_value) as total FROM db_eca.tb_payments  ");
 
             if ($statement->execute()) {
