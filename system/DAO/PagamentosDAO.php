@@ -1,9 +1,9 @@
 <?php
-require_once("conexao.php");
+require_once(__DIR__ .'/conexao.php');
 
 class PagamentosDAO {
     public function AllPagamentos(){
-        global $pdo;
+        $pdo = $GLOBALS['pdo'];
 
         try {
 
@@ -26,7 +26,7 @@ class PagamentosDAO {
     }
     
      public function Totaldepagamentos() {
-        global $pdo;
+         $pdo = $GLOBALS['pdo'];
 
         try {
             $statement = $pdo->prepare("SELECT sum(db_value) as total FROM db_eca.tb_payments  ");
@@ -48,11 +48,11 @@ class PagamentosDAO {
     }
 
     public function TotaldepagamentosUltimoMes() {
-        global $pdo;
+        $pdo = $GLOBALS['pdo'];
 
         try {
 
-            $statement = $pdo->prepare("SELECT sum(db_value) as total FROM db_eca.tb_payments as p where p.int_month = MONTH(CURDATE());");
+            $statement = $pdo->prepare("SELECT sum(db_value) as total FROM db_eca.tb_payments as p where p.int_month = MONTH(CURDATE())-1;");
 
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
@@ -70,11 +70,11 @@ class PagamentosDAO {
         }
     }
     public function MediaPagamentosDoUltimoMes() {
-        global $pdo;
+        $pdo = $GLOBALS['pdo'];
 
         try {
 
-            $statement = $pdo->prepare("SELECT AVG(db_value) as total FROM db_eca.tb_payments as p where p.int_month = MONTH(CURDATE());  ");
+            $statement = $pdo->prepare("SELECT AVG(db_value) as total FROM db_eca.tb_payments as p where p.int_month = MONTH(CURDATE())-1;  ");
 
             if ($statement->execute()) {
                 if ($statement->rowCount() > 0) {
@@ -93,7 +93,7 @@ class PagamentosDAO {
     }
 
     public function Relatorio6(){
-        global $pdo;
+        $pdo = $GLOBALS['pdo'];
 // #Relatório PDF com o valor total dos pagamentos por região em ordem alfabética;
         try {
 

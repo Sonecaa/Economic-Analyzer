@@ -5,7 +5,7 @@
  * Date: 31/05/2018
  * Time: 01:25
  */
-require_once "../system/DAO/BeneficiariosDAO.php";
+//require_once './system/DAO/BeneficiariosDAO.php';
 $daobeneficiarios = new BeneficiariosDAO();
 ?>
 
@@ -115,4 +115,4 @@ $daobeneficiarios = new BeneficiariosDAO();
 <hr>
 <br>
 <div id="chartContainer4" style="height: 470px; max-width: 920px; margin: 0px auto;"></div>
-<script src="../graficos/canvasjs.min.js"></script>
+<script src="/economic-analyzer/system/graficos/canvasjs.min.js"></script>

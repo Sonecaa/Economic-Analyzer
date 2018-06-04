@@ -152,7 +152,7 @@ class Template
     function mainpanel()
     {
 
-        echo "<div class=\"main-panel\" style=\"overflow:hidden\">
+        echo "<div class=\"main-panel\" >
         <nav class=\"navbar navbar-default\">
             <div class=\"container-fluid\">
                 <div class=\"navbar-header\">

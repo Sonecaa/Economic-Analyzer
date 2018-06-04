@@ -12,9 +12,9 @@
 */
         }
     </style>
-<?php // include('system/dashboard.php'); ?>
- <iframe width="100%" height="250%" CLASS="Iframado" frameborder="0" src="http://localhost/EconomiC-Analyzer/system/dashboard.php/"></iframe>
-  
+<?php include(__DIR__ .'/../system/dashboard.php'); ?>
+<!-- <iframe width="100%" height="250%" CLASS="Iframado" frameborder="0" src="http://localhost/EconomiC-Analyzer/system/dashboard.php/"></iframe>
+-->
 
 <?php
 	//$this->display('_Footer.tpl.php');

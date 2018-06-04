@@ -6,12 +6,23 @@ $template = new Template();
 
 $template->header();
 
+?>
+
+<?php
+
+include('classes/_headerLogin.php');
+
+
+?>
+<?php
+
 $template->sidebar();
 
 $template->mainpanel();
 
 require_once "DAO/BeneficiariosDAO.php";
 require_once "DAO/PagamentosDAO.php";
+
 
 try{
     $daobeneficiarios = new BeneficiariosDAO();
@@ -21,6 +32,7 @@ try{
 catch (Exception $e){
  echo "<h1>$e</h1>";
 }
+
 
 
 ?>
@@ -80,7 +92,7 @@ catch (Exception $e){
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-calendar"></i> Atual
+                                        <i class="ti-calendar"></i> Mês passado
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +120,7 @@ catch (Exception $e){
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-timer"></i> Atual
+                                        <i class="ti-timer"></i> Mês passado
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +162,7 @@ catch (Exception $e){
                             <div class="header">
                                 <h4 class="title">Users Behavior</h4>
                                 <p class="category">24 Hours performance</p>
-                                <?php // include('login.php'); ?>
+                                <?php // include('_login.php'); ?>
                                 <?php include('graficos/_Graph1.php'); ?>
                                 <br>
                                 <?php // include('graficos/_Graph2.php'); ?>
@@ -226,6 +238,6 @@ catch (Exception $e){
 <?php
 
         $template->footer();
-
+include '_login.php';
 ?>
 

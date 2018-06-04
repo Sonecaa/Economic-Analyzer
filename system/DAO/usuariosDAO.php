@@ -6,28 +6,28 @@
  * Time: 22:31
  */
 require_once("conexao.php");
-class usuarios
+class usuariosDAO
 {
 
-    public function login(){
-        global $pdo;
-
-    if(!empty($_POST['username']) && !empty($_POST['password']))
+    public function login($username, $password){
+        $pdo = $GLOBALS['pdo'];
+    if(!empty($username) && !empty($password))
     {
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+        $username = trim($username);
+        $password = trim($password);
 
-        $username = "'".$username."'";
-        $password = "'".$password."'";
+        $username = $username;
+        $password =$password;
 
         $statement = $pdo->prepare("SELECT * FROM db_eca.tb_usuarios as a  WHERE a.login_usuarios = ? AND a.password_usuarios = ?;");
         $statement->bindParam(1,$username);
-        $statement->bindParam(1,$password);
+        $statement->bindParam(2,$password);
         if ($statement->execute()) {
             if ($statement->rowCount() > 0) {
+                $x = $statement->fetch(PDO::FETCH_OBJ);
                 session_start();
 
-                $_SESSION['username'] = $username;
+                $_SESSION['usuario'] = $x;
 
                 return true;
             }
